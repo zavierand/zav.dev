@@ -13,10 +13,94 @@ import { a } from '@react-spring/three';
 
 import islandScene from '../assets/3d/spirited_away.glb';
 
-const SpiritedAway = (props) => {
-  const group = useRef()
-  const { nodes, materials, animations } = useGLTF(islandScene)
-  const { actions } = useAnimations(animations, group)
+const SpiritedAway = ({ isRotating, setIsRotating, ...props }) => {
+  const group = useRef();
+
+  const { gl, viewport } = useThree();
+  const { nodes, materials, animations } = useGLTF(islandScene);
+
+  const lastX = useRef(0);
+  const rotationSpeed = useRef(0);
+  const dampingFactor = 0.95;
+
+  const handleClicked = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    setIsRotating(true);
+
+    let clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    lastX.current = clientX;
+  };
+  
+  const handleUnclicked = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    setIsRotating(false);
+  };
+
+  const handleMove = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    if (isRotating) {
+      let clientX = e.touches ? e.touches[0].clientX : e.clientX;
+
+      const delta = (clientX - lastX.current) / viewport.width;
+
+      group.current.rotation.y += delta * 0.01 * Math.PI;
+
+      lastX.current = clientX;
+      rotationSpeed.current = delta * 0.01 * Math.PI;
+    }
+  };
+
+  const handleKey = (e) => {
+    if (e.key === 'KeyA' && !isRotating) {
+      setIsRotating(true);
+      group.current.rotation.y += 0.01 * Math.PI;
+    } else if (e.key === 'KeyD' && !isRotating) {
+      setIsRotating(true);
+      group.current.rotation.y -= 0.01 * Math.PI;
+    }
+  };
+
+  const handleKeyUp = (e) => {
+    if (e.key === 'KeyA' || e.key === 'KeyD') setIsRotating(false);
+  };
+
+  useFrame(() => {
+    if (!isRotating) {
+      rotationSpeed.current *= dampingFactor;
+
+      if (Math.abs(rotationSpeed.current) < 0.001) rotationSpeed.current = 0;
+    }
+
+    group.current.rotation.y += rotationSpeed.current;
+  });
+
+  const { actions, names } = useAnimations(animations, group);
+
+  useEffect(() => {
+    const canvas = gl.domElement;
+    canvas.addEventListener('pointerdown', handleClicked);
+    canvas.addEventListener('pointerup', handleUnclicked);
+    canvas.addEventListener('pointermove', handleMove);
+    document.addEventListener('keydown', handleKey);
+    document.addEventListener('keyup', handleKeyUp);
+
+    actions[names[0]].play();
+
+    return () => {
+      canvas.removeEventListener('pointerdown', handleClicked);
+      canvas.removeEventListener('pointerup', handleUnclicked);
+      canvas.removeEventListener('pointermove', handleMove);
+      document.removeEventListener('keydown', handleKey);
+      document.removeEventListener('keyup', handleKeyUp);
+    };
+  }, [gl, handleClicked, handleUnclicked, handleMove, handleKey, handleKeyUp]);
+
   return (
     <group ref={group} {...props} dispose={null}
     scale={[0.15, 0.15, 0.15]}

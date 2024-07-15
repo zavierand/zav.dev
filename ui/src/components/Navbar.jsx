@@ -27,7 +27,7 @@ const Navbar = () => {
             to='/contact' 
             className={({ isActive }) => isActive ? 'text-blue-500' : 'text-black'}
           >
-              ABOUT
+              CONTACT
           </NavLink>
          </nav>
       </div>
