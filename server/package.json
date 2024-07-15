@@ -1,0 +1,28 @@
+{
+  "name": "zav.dev",
+  "version": "1.0.0",
+  "description": "my full-stack portfolio website",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "nodemon ./src/index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zavierand/zav.dev.git"
+  },
+  "author": "Zavier Andrianarivo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zavierand/zav.dev/issues"
+  },
+  "homepage": "https://github.com/zavierand/zav.dev#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "es6": "^0.0.7",
+    "express": "^4.19.2",
+    "mocha": "^10.6.0",
+    "mongoose": "^8.5.1",
+    "nodemon": "^3.1.4"
+  }
+}
