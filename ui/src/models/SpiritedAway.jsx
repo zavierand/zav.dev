@@ -14,11 +14,13 @@ import { a } from '@react-spring/three';
 import islandScene from '../assets/3d/spirited_away.glb';
 
 const SpiritedAway = (props) => {
-  const spiritedAwayRef = useRef()
-  const { nodes, materials, animations } = useGLTF('/spirited_away.glb')
+  const group = useRef()
+  const { nodes, materials, animations } = useGLTF(islandScene)
   const { actions } = useAnimations(animations, group)
   return (
-    <a.group ref={spiritedAwayRef} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null}
+    scale={[0.15, 0.15, 0.15]}
+    position={[0, -1, 0]}>
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
           <group name="2cf451f0841f492e897ae3d00ad516d5fbx" rotation={[Math.PI / 2, 0, 0]}>
@@ -1953,10 +1955,10 @@ const SpiritedAway = (props) => {
           </group>
         </group>
       </group>
-    </a.group>
+    </group>
   )
 }
 
-useGLTF.preload('/spirited_away.glb')
+//useGLTF.preload('/spirited_away.glb')
 
 export default SpiritedAway;
