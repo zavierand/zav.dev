@@ -9,9 +9,11 @@ import Boat from '../models/Boat.jsx';
 import SpiritedAway from '../models/SpiritedAway.jsx';
 
 import Loader from '../components/Loader.jsx';
+import HomeInfo from '../components/HomeInfo.jsx';
 
 const Home = () => {
     const [isRotating, setIsRotating] = useState(false);
+    const [currentStage, setCurrentStage] = useState(1);
 
     const spiritedAwaySize = () => {
         // spirited away vars
@@ -43,7 +45,7 @@ const Home = () => {
   return (
     <section className='w-full h-screen relative'>
       <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center '>
-        POPUP 
+        { currentStage && <HomeInfo currentStage={currentStage} /> }
       </div>
       <Canvas 
         className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
@@ -95,6 +97,7 @@ const Home = () => {
             rotation={rot}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
           >
 
           </SpiritedAway>

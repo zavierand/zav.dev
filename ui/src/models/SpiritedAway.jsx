@@ -6,16 +6,14 @@ Source: https://sketchfab.com/3d-models/spirited-away-51e6f6a2816540b780bc0f1c82
 Title: Spirited Away
 */
 
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber';
-import { a } from '@react-spring/three';
 
 import islandScene from '../assets/3d/spirited_away.glb';
 
-const SpiritedAway = ({ isRotating, setIsRotating, ...props }) => {
+const SpiritedAway = ({ setCurrentStage, isRotating, setIsRotating, ...props }) => {
   const group = useRef();
-
   const { gl, viewport } = useThree();
   const { nodes, materials, animations } = useGLTF(islandScene);
 
@@ -32,7 +30,7 @@ const SpiritedAway = ({ isRotating, setIsRotating, ...props }) => {
     let clientX = e.touches ? e.touches[0].clientX : e.clientX;
     lastX.current = clientX;
   };
-  
+
   const handleUnclicked = (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -73,14 +71,26 @@ const SpiritedAway = ({ isRotating, setIsRotating, ...props }) => {
   useFrame(() => {
     if (!isRotating) {
       rotationSpeed.current *= dampingFactor;
-
       if (Math.abs(rotationSpeed.current) < 0.001) rotationSpeed.current = 0;
+    } else {
+      const rotation = group.current.rotation.y;
+      const normalizedRotation = ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+  
+      // Set the current stage based on the island's orientation
+      if (normalizedRotation < 0.15 || normalizedRotation > 5.9) {
+        setCurrentStage(4);
+      } else if (normalizedRotation >= 1.0 && normalizedRotation <= 1.5) {
+        setCurrentStage(3);
+      } else if (normalizedRotation >= 2.0 && normalizedRotation <= 2.5) {
+        setCurrentStage(2);
+      } else if (normalizedRotation >= 3.5 && normalizedRotation <= 4.0) {
+        setCurrentStage(1);
+      } else {
+        setCurrentStage(null);
+      }
     }
 
-    group.current.rotation.y += rotationSpeed.current;
   });
-
-  const { actions, names } = useAnimations(animations, group);
 
   useEffect(() => {
     const canvas = gl.domElement;
@@ -89,8 +99,6 @@ const SpiritedAway = ({ isRotating, setIsRotating, ...props }) => {
     canvas.addEventListener('pointermove', handleMove);
     document.addEventListener('keydown', handleKey);
     document.addEventListener('keyup', handleKeyUp);
-
-    actions[names[0]].play();
 
     return () => {
       canvas.removeEventListener('pointerdown', handleClicked);
