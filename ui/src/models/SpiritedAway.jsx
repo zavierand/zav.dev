@@ -78,17 +78,17 @@ const SpiritedAway = ({ setCurrentStage, isRotating, setIsRotating, ...props }) 
   
       // Set the current stage based on the island's orientation
       if (normalizedRotation < 0.15 || normalizedRotation > 5.9) {
-        setCurrentStage(4);
-      } else if (normalizedRotation >= 1.0 && normalizedRotation <= 1.5) {
-        setCurrentStage(3);
-      } else if (normalizedRotation >= 2.0 && normalizedRotation <= 2.5) {
-        setCurrentStage(2);
-      } else if (normalizedRotation >= 3.5 && normalizedRotation <= 4.0) {
         setCurrentStage(1);
+      } else if (normalizedRotation >= 1.0 && normalizedRotation <= 1.5) {
+        setCurrentStage(4);
+      } else if (normalizedRotation >= 2.0 && normalizedRotation <= 2.5) {
+        setCurrentStage(3);
+      } else if (normalizedRotation >= 3.5 && normalizedRotation <= 4.0) {
+        setCurrentStage(2);
       } else {
         setCurrentStage(null);
       }
-    }
+    } 
 
   });
 
