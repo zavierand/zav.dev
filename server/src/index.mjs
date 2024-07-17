@@ -3,6 +3,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
+// import our projects
+import Project from './models/projectSchema.mjs';
+
 dotenv.config();
 
 const PORT = process.env.PORT;
@@ -22,6 +25,19 @@ app.get('/', (req, res) => {
         });
     } catch(err) {
         console.error('Could not get /', err);
+    }
+});
+
+app.get('/projects', async (req, res) => {
+    try {
+        const projects = await Project.find();
+        res.json(projects);
+        // log projects if status === 200
+        if (res.status(200)) {
+            console.log(projects);
+        }
+    } catch(err) {
+        console.error('Could not get /projects', err);
     }
 });
 

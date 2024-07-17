@@ -8,7 +8,7 @@ const Navbar = () => {
         <NavLink 
           to='/' 
           className='w-10 h-10 rounded-lg bg-white flex items-center justify-center font-bold shadow-md'>
-          <p className='bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent'>
+          <p className='blue-gradient_text bg-clip-text text-transparent'>
             ZA
           </p>
         </NavLink>
@@ -17,19 +17,19 @@ const Navbar = () => {
             to='/about' 
             className={({ isActive }) => isActive ? 'text-blue-500' : 'text-black'}
           >
-              ABOUT
+              About
           </NavLink>
           <NavLink 
             to='/projects' 
             className={({ isActive }) => isActive ? 'text-blue-500' : 'text-black'}
           >
-              PROJECTS
+              Projects
           </NavLink>
           <NavLink 
             to='/contact' 
             className={({ isActive }) => isActive ? 'text-blue-500' : 'text-black'}
           >
-              CONTACT
+              Contact
           </NavLink>
          </nav>
       </div>
