@@ -23,21 +23,21 @@ I implemented the backend of the website using NodeJS and Express, with the data
 For this project I wanted to keep it simpler and just start with keeping the projects in the database to get this done, for now. Future steps include learning how to use the buffer in mongoose to store images in a database, as well keeping all data on the backend!
 
 # Credits
-[Stylized Clouds](./ui/src/models/stylized_clouds.glb)
+[Stylized Clouds](./ui/src/assets/3d/stylized_clouds.glb)
 
 "Stylized clouds" (https://skfb.ly/ouKyu) by lavakongen is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-[Kiki and Jiji!!!](./ui/src/models/kiki_and_jiji.glb)
+[Kiki and Jiji!!!](./ui/src/assets/3d/kiki_and_jiji.glb)
 
 "Kiki and Jiji" (https://skfb.ly/onSzC) by TonyWony is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-[Spirited Away](./ui/src/models/spirited_away.glb)
+[Spirited Away](./ui/src/assets/3d/spirited_away.glb)
 
 "Spirited Away" (https://skfb.ly/6WY7v) by Nomeda Repsaite is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 Huge thank you to these artists!!!
 
-[Ponyo Boat](./ui/src/models/3d_daily_ghibli.glb)
+[Ponyo Boat](./ui/src/assets/3d/3d_daily_ghibli.glb)
 
 "3D Daily: Ghibli" (https://skfb.ly/6TMSW) by ina_tomecek is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
