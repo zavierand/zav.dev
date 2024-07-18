@@ -11,7 +11,7 @@ I implemented the backend of the website with NodeJS and Express, while using Mo
 # Front-end
 Again (lol), the project was bootstrapped with ThreeJS, React and TailwindCSS. I decided to go with a Ghibli-esque theme for my resume to display some of my personality! Initially, I wanted to make it car-based, but I did not want to spend too much time learning ThreeJS.
 
-This project also contains a few dependencies - React Three Fiber, React Three Drei, React Vertical Timeline, and React Router DOM. After spending about a week and half reading ThreeJS documentation, I decided to also read some documentation on React Three Fiber and React Three Drei. As well as watcha f ew tutorials and build some stuff before building the front-end out! I will provide a link to the most helpful resources I used in project.
+This project also contains a few dependencies - React Three Fiber, React Three Drei, React Vertical Timeline, and React Router DOM. After spending about a week and half reading ThreeJS documentation, I decided to also read some documentation on React Three Fiber and React Three Drei. As well as watch a few tutorials and build some stuff before building the front-end out! I will provide a link to the most helpful resources I used in project.
 
 As for the 3D models, these were all free - obtained from "Sketchfab". Huge shoutout to all of the artists who posted their work for free on Sketchfab - as this project would not have been done without their help! In the source code for [each model](./ui/src/models), each ".jsx" has credits to all of the artists who's work I used. However, I will also provide credtis to all of the artists in a separate section at the bottom of the README.md file.
 
@@ -23,12 +23,42 @@ I implemented the backend of the website using NodeJS and Express, with the data
 For this project I wanted to keep it simpler and just start with keeping the projects in the database to get this done, for now. Future steps include learning how to use the buffer in mongoose to store images in a database, as well keeping all data on the backend!
 
 # Credits
+[Stylized Clouds](./ui/src/models/stylized_clouds.glb)
+
 "Stylized clouds" (https://skfb.ly/ouKyu) by lavakongen is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+[Kiki and Jiji!!!](./ui/src/models/kiki_and_jiji.glb)
 
 "Kiki and Jiji" (https://skfb.ly/onSzC) by TonyWony is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
+[Spirited Away](./ui/src/models/spirited_away.glb)
+
 "Spirited Away" (https://skfb.ly/6WY7v) by Nomeda Repsaite is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+Huge thank you to these artists!!!
+
+[Ponyo Boat](./ui/src/models/3d_daily_ghibli.glb)
 
 "3D Daily: Ghibli" (https://skfb.ly/6TMSW) by ina_tomecek is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-Huge thank you to these artists!!!
+# Resources
+[3D Portfolio](https://www.youtube.com/watch?v=FkowOdMjvYo&list=PL6QREj8te1P7rEwj_IzsoLzQ-FBbZ6lqP&index=2&t=5128s):
+
+[Javascript Mastery](https://www.youtube.com/@javascriptmastery) has some of the best videos on learning Javascript! Used some of his videos to help cram for my full-stack development final lol.
+
+[ThreeJS Documentation](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene):
+
+Super clear and cohesive. Lots of examples as well - both in terms of projects and coding snippets with renders!
+
+[React Three Fiber Documentation](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction):
+
+Documentation for R3F! Really easy to get through and lots of examples.
+
+[React Three Drei](https://www.npmjs.com/package/@react-three/drei):
+
+Super easy to get through. Super short and straightforward.
+
+[React Verical Timeline](https://www.npmjs.com/package/react-vertical-timeline-component):
+
+Super simple dependency to bootstrap some clean event timeline necessary for your work!
+
