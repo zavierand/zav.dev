@@ -13,7 +13,7 @@ Again (lol), the project was bootstrapped with ThreeJS, React and TailwindCSS. I
 
 This project also contains a few dependencies - React Three Fiber, React Three Drei, React Vertical Timeline, and React Router DOM. After spending about a week and half reading ThreeJS documentation, I decided to also read some documentation on React Three Fiber and React Three Drei. As well as watcha f ew tutorials and build some stuff before building the front-end out! I will provide a link to the most helpful resources I used in project.
 
-As for the 3D models, these were all free - obtained from "Sketchfab". Huge shoutout to all of the artists who posted their work for free on Sketchfab - as this project would not have been done without their help! In the source code for [each model](./src/models), each ".jsx" has credits to all of the artists who's work I used. However, I will also provide credtis to all of the artists in a separate section at the bottom of the README.md file.
+As for the 3D models, these were all free - obtained from "Sketchfab". Huge shoutout to all of the artists who posted their work for free on Sketchfab - as this project would not have been done without their help! In the source code for [each model](./src/ui/models), each ".jsx" has credits to all of the artists who's work I used. However, I will also provide credtis to all of the artists in a separate section at the bottom of the README.md file.
 
 Again, thank you all!
 
