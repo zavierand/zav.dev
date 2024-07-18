@@ -6,6 +6,9 @@ import 'react-vertical-timeline-component/style.min.css';
 // import destructured objects (and functions) from data/index.js
 import { mergeSort, experiences, skills } from '../data/';
 
+// import components
+import CTA from '../components/CTA.jsx';
+
 const About = () => {
   // sort skills
   mergeSort(skills, 0, skills.length - 1);
@@ -98,7 +101,7 @@ const About = () => {
 
       {/* CTA */}
       <hr className='border-slate-200' />
-
+      <CTA />
     </section>
   );
 };

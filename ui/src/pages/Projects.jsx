@@ -1,6 +1,11 @@
-import React,{ useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { clips, arrow } from '../assets/icons'
+import React,{ useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+// import data
+import { clips, arrow } from '../assets/icons';
+
+// import components
+import CTA from '../components/CTA.jsx';
 
 const Projects = () => {
   // initialize projects to an empty array
@@ -95,6 +100,7 @@ const Projects = () => {
       </div>
 
       <hr className='border-slate-200'/>
+      <CTA />
     </section>
   )
 }
