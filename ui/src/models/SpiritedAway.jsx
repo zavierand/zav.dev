@@ -15,7 +15,8 @@ import islandScene from '../assets/3d/spirited_away.glb';
 const SpiritedAway = ({ setCurrentStage, isRotating, setIsRotating, ...props }) => {
   const group = useRef();
   const { gl, viewport } = useThree();
-  const { nodes, materials, animations } = useGLTF(islandScene);
+  const { nodes, materials, actions, animations, names } = useGLTF(islandScene);
+  console.log(actions);
 
   const lastX = useRef(0);
   const rotationSpeed = useRef(0);
@@ -93,6 +94,9 @@ const SpiritedAway = ({ setCurrentStage, isRotating, setIsRotating, ...props }) 
   });
 
   useEffect(() => {
+    // i forgot to animate the island lol
+    
+    // ill fix it later lol
     const canvas = gl.domElement;
     canvas.addEventListener('pointerdown', handleClicked);
     canvas.addEventListener('pointerup', handleUnclicked);

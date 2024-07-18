@@ -1,5 +1,6 @@
-// src/assets/icons/index.js
+import arrow from './arrow.svg';
 import c from './c.svg';
+import clips from './clips.svg';
 import contact from './contact.svg';
 import cpp from './cpp.svg';
 import css from './css.svg';
@@ -22,7 +23,9 @@ import tensorflow from './tensorflow.svg';
 import vim from './vim.svg';
 
 export {
+  arrow,
   c,
+  clips,
   contact,
   cpp,
   css,
