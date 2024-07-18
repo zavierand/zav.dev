@@ -11,6 +11,7 @@
     "host": "vite --host 192.168.1.233"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-spring/three": "^9.7.3",
     "@react-three/drei": "^9.108.3",
     "@react-three/fiber": "^8.16.8",

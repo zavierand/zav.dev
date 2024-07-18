@@ -7,7 +7,7 @@ import { Home, About, Projects, Contact } from './pages'
 function App() {
 
   return (
-    <main className='bg-transparent'>
+    <main className='bg-transparent h-full'>
       <Router>
         <Navbar /> 
         <Routes>
