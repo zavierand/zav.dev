@@ -1,7 +1,7 @@
 # Welcome
 Welcome to my portfolio website! This is a full-stack project, where the front-end was bootstrapped with ReactJS and ThreeJS and the backend was implemented in ExpressJS and NodeJS with a MongoDB database. 
 
-I wanted to make this website do more than just showcase my projects, but also showcase my personality - hence, the theme for this website being around "Spirited Away", one of my favorite "Studio Ghibli" movies of all time.
+I wanted to make this website do more than just showcase my projects, but also showcase my full-stack development skills AND my personality - hence, the theme for this website being "Studio Ghibli", one of my favorite anime studios of all time! Let's see if y'all can catch all of the Ghibli references I made throughout the website!
 
 # Overview
 This project was bootstrapped with ThreeJS, ReactJS, and TailwindCSS. Again, I wanted to make this website do more than just showcase my work, but also showcase my personality! Hence, the theme of my website is "Studio Ghibli"!
@@ -21,6 +21,9 @@ Again, thank you all!
 I implemented the backend of the website using NodeJS and Express, with the database being implemented using Mongoose (MongoDB). In the backend, I am currently storing my projects. In a previous version of this website, I had included all information, from the "About Me" to the "Projects" page in the backend - handling the storage of data such as my projects, bio, and experiences. 
 
 For this project I wanted to keep it simpler and just start with keeping the projects in the database to get this done, for now. Future steps include learning how to use the buffer in mongoose to store images in a database, as well keeping all data on the backend!
+
+# Deployment
+For the front-end, I wanted to keep it simple and deploy the client-side app to [Netlify](). For the backend, I deployed the Express App to AWS EC2. It was the first true app I've deployed to an IaaS. But during the semester, I had to deploy my full-stack clone, ZZENSE, to my school server, so a lot of the same protocols revolving around SSH, TCP, and virtual machines applied to this same project.
 
 # Credits
 [Stylized Clouds](./ui/src/assets/3d/stylized_clouds.glb)

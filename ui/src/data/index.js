@@ -262,7 +262,8 @@ export const experiences = [
         points: [
             "1/5 recipients of the POISE Scholarship",
             "Currently a rising senior, taking a few more CS related classes",
-            "Those classes include \"Introduction to Robotics\", and \"Introduciton to Machine Learning\".",
+            "Classes I've already taken include \"Full-Stack Development\", \"Data Structures\", \"Algorithms\", and \"Linear Algebra\".",
+            "Classes I plan to take my last two semesters include \"Introduction to Robotics\", \"Artificial Intelligence\", \"Introduciton to Machine Learning\", and \"Operating Systems\".",
             "During the Spring 2024 semester, I was part of a cohort called \"Tech Treks\"! Met some amazing people where we all built some amazing stuff!... which can be seen in my projects section!",
         ],
         id: 5,

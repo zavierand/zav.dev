@@ -29,11 +29,11 @@ const About = () => {
         <p>
           In my free-time, I like to rock climb, cook and/or bake, play video games, and watch videos and/or
           TV. One show I've been watching a lot recently is "The Blacklist"!! I started watching it a few weeks
-          after the Spring 2024 semester ended and I'm currently on season 4! My favorite character is Aram Mojtabi
+          after the Spring 2024 semester ended and I'm currently on season 4! My favorite character is Aram Mojtabai
           - such a wholesome dude!
         </p>
         <p>
-          Also love cars. My dream car is a "GTR R34 VSpec-II NUR". You can't ever go wrong with the iconic Skyline
+          Also... I love cars. My dream car is a "GTR R34 VSpec-II NUR". You can't ever go wrong with the iconic Skyline
           Blue or Midnight Purple colorway either! Enough about my hobbies and interests though! These are some skills
           I have that I use when building all of my projects...
         </p>
@@ -113,6 +113,11 @@ const About = () => {
                 </VerticalTimelineElement>
               ))}
             </VerticalTimeline>
+          </div>
+          <div className='mt-5 flex items-center justify-center'>
+            <p>
+              If you're interested in learning more about me and my projects, reach out to me!
+            </p>
           </div>
       </div>
 
