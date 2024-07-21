@@ -39,7 +39,7 @@ const renderData = {
         <InfoBox 
             text={`Did you like anything you saw? Send me a message!`}
             link='/contact'
-            btnText={`(I\'m desparate)`}
+            btnText={`(I\'m desperate)`}
         />
     ),
 };
