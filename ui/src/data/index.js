@@ -3,11 +3,14 @@ import { pwc, school } from "../assets/img";
 
 // import icons for skills
 import {
+    ai,
     c,
     contact,
     cpp,
     css,
+    discord,
     express,
+    fashion,
     flask,
     git,
     github,
@@ -17,6 +20,7 @@ import {
     linkedin,
     mongodb,
     nodejs,
+    portfolio,
     python,
     pytorch,
     react,
@@ -61,6 +65,64 @@ export const mergeSort = (arr, l, r) => {
     let k = l; // Initial index of merged subarray
     while (i < n1 && j < n2) {
       if (left[i].name <= right[j].name) {
+        arr[k] = left[i];
+        i++;
+      } else {
+        arr[k] = right[j];
+        j++;
+      }
+      k++;
+    }
+  
+    // Copy the remaining elements of left[], if any
+    while (i < n1) {
+      arr[k] = left[i];
+      i++;
+      k++;
+    }
+  
+    // Copy the remaining elements of right[], if any
+    while (j < n2) {
+      arr[k] = right[j];
+      j++;
+      k++;
+    }
+  };
+
+  export const mergeSortExperiences = (arr, l, r) => {
+    if (l >= r) {
+      return;
+    }
+  
+    const m = l + Math.floor((r - l) / 2);
+  
+    mergeSortExperiences(arr, l, m);
+    mergeSortExperiences(arr, m + 1, r);
+    mergeExperiences(arr, l, m, r);
+  };
+  
+  export const mergeExperiences = (arr, l, m, r) => {
+    let n1 = m - l + 1;
+    let n2 = r - m;
+  
+    // Create temporary arrays
+    let left = new Array(n1);
+    let right = new Array(n2);
+  
+    // Copy data to temporary arrays left[] and right[]
+    for (let i = 0; i < n1; i++) {
+      left[i] = arr[l + i];
+    }
+    for (let j = 0; j < n2; j++) {
+      right[j] = arr[m + 1 + j];
+    }
+  
+    // Merge the temporary arrays back into arr[l..r]
+    let i = 0; // Initial index of first subarray
+    let j = 0; // Initial index of second subarray
+    let k = l; // Initial index of merged subarray
+    while (i < n1 && j < n2) {
+      if (left[i].id <= right[j].id) {
         arr[k] = left[i];
         i++;
       } else {
@@ -203,6 +265,7 @@ export const experiences = [
             "Those classes include \"Introduction to Robotics\", and \"Introduciton to Machine Learning\".",
             "During the Spring 2024 semester, I was part of a cohort called \"Tech Treks\"! Met some amazing people where we all built some amazing stuff!... which can be seen in my projects section!",
         ],
+        id: 5,
     },
     {
         title: "Undergraduate Research Assistant",
@@ -217,6 +280,7 @@ export const experiences = [
             "The workload was tough at first, but I managed to be able to present some findings at the end of the semester. It was a very fun experience!",
             "Maintaining my grades while working full-time also led to other opportunities as well..."
         ],
+        id: 4
     },
     {
         title: "Computer Science, A.S",
@@ -231,6 +295,7 @@ export const experiences = [
             "Took \"Intro to Programming in Python\" and absolutely loved the class!",
             "... this led to my first \"unofficial\" experience related to coding."
         ],
+        id: 3, 
     },
     {
         title: "Client Services Administrator",
@@ -240,8 +305,13 @@ export const experiences = [
         date: "Dec 2019 - Aug 2023",
         points: [
             "My first true job!",
-            "Worked here for four years"
+            "Worked here for four years",
+            "My first office job - was exciting seeing how fast-paced the corporate world was!",
+            "Managed package logistics, overseeing receipt, processing, and delivery of roughly 800 packages daily.",
+            "Maintained relationships with clients, resulting in a not only a vast network, but also a significant satisfaction rate relating to my work!",
+            "As much as I loved it, I had to leave at some point to pursue more..."
         ],
+        id: 2,
     },
     {
         title: "Photography, A.A",
@@ -257,6 +327,7 @@ export const experiences = [
             "Majority of my classes included some relation to fine arts, from photography, drawing, digital design, to many more.",
             "I enjoyed working with the software, and thought it would be cool somehow if I could ever build something too!"
         ],
+        id: 1,
     }
 ];
 
@@ -277,3 +348,10 @@ export const socialLinks = [
         link: 'https://www.linkedin.com/in/zavierand',
     }
 ];
+
+export const projectsIcons = {
+    "d'Éclat - AI": ai,
+    "ZZENSE - SSENSE Clone": fashion,
+    "Zav.dev - Portfolio Website!": portfolio,
+    "SAMMY - Discord Bot": discord,
+}

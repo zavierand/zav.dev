@@ -1,17 +1,38 @@
-import React, { useState, useEffect, Suspense } from 'react'
+import React, { useState, useEffect, useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Sky } from '@react-three/drei';
+import {  Sky } from '@react-three/drei';
 
+// import models
 import Clouds from '../models/Clouds.jsx';
-import Calcifer from '../models/Calcifer.jsx';
 import Kiki from '../models/Kiki.jsx';
 import Boat from '../models/Boat.jsx';
 import SpiritedAway from '../models/SpiritedAway.jsx';
 
+// import assets
+import { soundoff, soundon } from '../assets/icons';
+
+// import components
 import Loader from '../components/Loader.jsx';
 import HomeInfo from '../components/HomeInfo.jsx';
 
+// import audio
+import howl from '../assets/audio/merry-go-round-of-life.mp3'
+
 const Home = () => {
+    // 
+    const audioRef = useRef(new Audio(howl));
+    audioRef.current.volume = 0.3;
+    audioRef.current.loop = true;
+    const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+
+    useEffect(() => {
+      if (isPlayingMusic) {
+        audioRef.current.play()
+      } else {
+        audioRef.current.pause();
+      }
+    }, [isPlayingMusic])
+
     const [isRotating, setIsRotating] = useState(false);
     const [currentStage, setCurrentStage] = useState(1);
 
@@ -84,11 +105,6 @@ const Home = () => {
             scale={[0.017, 0.017, 0.017]}
             rotation={[0, -80, 0.015]}
           />
-          <Calcifer 
-            position={[1, -0.98, 1.7]}
-            scale={[0.03, 0.03, 0.03]}
-            rotation={[0, 1, 0]}
-          />
           <SpiritedAway 
             renderOrder={1}
             position={pos}
@@ -98,10 +114,17 @@ const Home = () => {
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
           >
-
           </SpiritedAway>
         </Suspense>
       </Canvas>
+      <div className='absolute bottom-2 left-2'>
+        <img 
+          src={!isPlayingMusic ? soundoff : soundon}
+          alt='sound'
+          className='w-10 h-10 cursor-pointer object-contain'
+          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+        />
+      </div>
     </section>
   )
 }

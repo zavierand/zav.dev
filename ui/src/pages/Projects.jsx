@@ -2,7 +2,9 @@ import React,{ useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // import data
-import { clips, arrow } from '../assets/icons';
+import { arrow } from '../assets/icons';
+
+import { projectsIcons } from '../data/index.js';
 
 // import components
 import CTA from '../components/CTA.jsx';
@@ -58,10 +60,10 @@ const Projects = () => {
             <div className='block-container w-12 h-12'>
               <div className={`btn-back rounded-xl`} />
               <div className='btn-front rounded-xl flex items-center justify-center'>
-                <img 
-                  src={clips}
-                  alt='projects'
-                  className=''
+                <img
+                    src={projectsIcons[project.name]}
+                    alt={project.name}
+                    className=''
                 />
               </div>
             </div>
