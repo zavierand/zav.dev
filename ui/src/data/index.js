@@ -353,6 +353,6 @@ export const socialLinks = [
 export const projectsIcons = {
     "d'Éclat - AI": ai,
     "ZZENSE - SSENSE Clone": fashion,
-    "Zav.dev - Portfolio Website!": portfolio,
+    "My Portfolio Website!": portfolio,
     "SAMMY - Discord Bot": discord,
 }
