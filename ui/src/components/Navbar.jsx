@@ -1,5 +1,7 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+
+import { socialLinks } from '../data';
 
 const Navbar = () => {
   return (
@@ -31,6 +33,31 @@ const Navbar = () => {
               Contact
           </NavLink>
          </nav>
+
+         <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
+          <ul>
+            {socialLinks.map((social) => (
+              <li
+                key={social.name}
+                className={`w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[${social.color}] rounded-md mb-2`}
+              >
+                <Link 
+                  to={social.link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex justify-between items-center w-full text-[#F4F0DB] p-4'
+                >
+                  <span className='mr-2'>{social.name}</span>
+                  <img 
+                    src={social.iconUrl}
+                    alt={social.name}
+                    className='w-8 h-8'
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
     </header>
   );
 }
