@@ -39,7 +39,8 @@ const Navbar = () => {
             {socialLinks.map((social) => (
               <li
                 key={social.name}
-                className={`w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[${social.color}] rounded-md mb-2`}
+                className={`w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 rounded-md mb-2`}
+                style={{ backgroundColor: social.color }}
               >
                 <Link 
                   to={social.link}
