@@ -337,16 +337,19 @@ export const socialLinks = [
         name: 'Contact',
         iconUrl: contact,
         link: '/contact',
+        color: '#9CDAF1'
     },
     {
         name: 'GitHub',
         iconUrl: github,
         link: 'https://github.com/zavierand',
+        color: '#333333'
     },
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
         link: 'https://www.linkedin.com/in/zavierand',
+        color: '#0077B5'
     }
 ];
 

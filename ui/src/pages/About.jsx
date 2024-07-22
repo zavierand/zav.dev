@@ -23,7 +23,7 @@ const About = () => {
       <div className='mt-5 flex flex-col gap-3'>
         <p>
           but a lot of people call me "Zav". I'm a computer science student at New York University with
-          many interests. From to cars, to robotics, to hardware and software - I want to combine
+          many interests. From cars, to robotics, to hardware and software - I want to combine
           these along with my other interests in art, fashion, music, and sports! 
         </p>
         <p>
