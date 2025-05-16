@@ -15,6 +15,8 @@ import html from './html.svg';
 import javascript from './javascript.svg';
 import latex from './latex.svg';
 import linkedin from './linkedin.svg';
+import mario from './mario.svg'
+import medical from './medical.svg'
 import mongodb from './mongodb.svg';
 import nodejs from './nodejs.svg';
 import portfolio from './portfolio.svg';
@@ -23,6 +25,7 @@ import pytorch from './pytorch.svg';
 import react from './react.svg';
 import soundoff from './soundoff.svg';
 import soundon from './soundon.svg';
+import spotify from './spotify.svg'
 import sql from './sql.svg';
 import tailwindcss from './tailwindcss.svg';
 import tensorflow from './tensorflow.svg';
@@ -46,6 +49,8 @@ export {
   javascript,
   latex,
   linkedin,
+  mario,
+  medical,
   mongodb,
   nodejs,
   portfolio,
@@ -54,6 +59,7 @@ export {
   react,
   soundoff,
   soundon,
+  spotify,
   sql,
   tailwindcss,
   tensorflow,

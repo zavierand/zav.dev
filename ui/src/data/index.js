@@ -18,12 +18,15 @@ import {
     javascript,
     latex,
     linkedin,
+    mario,
+    medical,
     mongodb,
     nodejs,
     portfolio,
     python,
     pytorch,
     react,
+    spotify,
     sql,
     tailwindcss,
     tensorflow,
@@ -358,4 +361,7 @@ export const projectsIcons = {
     "ZZENSE - SSENSE Clone": fashion,
     "My Portfolio Website!": portfolio,
     "SAMMY - Discord Bot": discord,
+    "Diabetes Classification Model Evaluation": medical,
+    "Spotify Song Classification": spotify,
+    "Deep Q-Learning for MarioBros": mario
 }

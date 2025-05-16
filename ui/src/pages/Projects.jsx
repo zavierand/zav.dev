@@ -52,6 +52,10 @@ const Projects = () => {
           Now, fast forward 20 something years later, and I'm still building! Here are some projects I've built
           over the past few years!
         </p>
+        <p>
+          Per Render: <span className='italic'>Your free instance will spin down with inactivity, which can delay requests by 50 seconds or more.</span>
+          ... so if the projects aren't loading yet, give it some time as the server has to spin back up !
+        </p>
       </div>
 
       <div className='flex flex-wrap my-20 gap-16'>
